@@ -33,7 +33,7 @@ int main()
         // f вкінці означає конвертування в флоат, (float) аналогічно тільки на початку
     };
 
-    //1 = right; -1 = left 
+    //1 = right; -1 = left - character direction
     float rightleft{ 1.f };
     
     //animation variables
@@ -62,11 +62,11 @@ int main()
         if (IsKeyDown(KEY_S)) direction.y += 1;
         
        
-        //
+        //movement checker + animation changer
         if (Vector2Length(direction) != 0.0) {
 
             /*
-           To normalize movement along the diagonal, it is imperative to define either this vector normalized or a singular vector. 
+            To normalize movement along the diagonal, it is imperative to define either this vector normalized or a singular vector. 
            
             set mapPos = mapPos - direction - рух мапи !
 
