@@ -9,12 +9,17 @@ class Character {
 public:
     //Getter to world position
     Vector2 getWorlsPos() { return worldPos; }
+    
+    void setScreenPos(int winWidth, int winHeight);
 
+    //tick function - take care of things that happend every frame
+    void tick(float deltaTime);
 
 private:
-    Texture2D texture;
-    Texture2D idle;
-    Texture2D run;
+    
+    Texture2D texture{ LoadTexture("characters/knight_idle_spritesheet.png") };
+    Texture2D idle{ LoadTexture("characters/knight_idle_spritesheet.png") };
+    Texture2D run{ LoadTexture("characters/knight_run_spritesheet.png") };
 
     Vector2 screenPos;
     Vector2 worldPos;
@@ -27,16 +32,60 @@ private:
     int frame{};
     const int maxFrame{ 6 };//base spritesheet
     const float updateTime{ 1.f / 12.f };
+    const float speed{ 4.f };
 };
+
+//called fully qualifying the function name and the two colons is known as the scope resolution
+void Character::setScreenPos(int winWidth, int winHeight) {
+    screenPos = {
+        (float)winWidth / 2.0f - 4.0f * (0.5f * (float)texture.width / 6.0f),
+        (float)winHeight / 2.0f - 4.0f * (0.5f * (float)texture.height)
+    };
+}
+
+void Character::tick(float deltaTime) {
+    Vector2 direction{};
+    if (IsKeyDown(KEY_A)) direction.x -= 1;
+    if (IsKeyDown(KEY_D)) direction.x += 1;
+    if (IsKeyDown(KEY_W)) direction.y -= 1;
+    if (IsKeyDown(KEY_S)) direction.y += 1;
+
+
+    //movement checker + animation changer
+    if (Vector2Length(direction) != 0.0) {
+
+        /*
+        set worldPos = worldPos + direction - рух мапи !
+        */
+
+        worldPos = Vector2Add(worldPos, Vector2Scale(Vector2Normalize(direction), speed));
+        // Умовний тернарний оператор x = (умова) ? значення1 : значення2; 
+        direction.x < 0.f ? rightleft = -1.f : rightleft = 1.f;
+        texture = run;
+    }
+    else {
+        texture = idle;
+    }
+
+    //update animation frame 
+    runningTime += deltaTime;
+
+    if (runningTime >= updateTime)
+    {
+        frame++;
+        runningTime = 0.f;
+        if (frame > maxFrame) frame = 0;
+
+    }
+}
 
 int main()
 {
 // == Initialization window ===============================================================================================Initialization window ============ 
-    int windowDismention[2];
-    windowDismention[0] = 384;
-    windowDismention[1] = 384;
+    const int windowWidth = 384;
+    const int windowHeight = 384;
 
-    InitWindow(windowDismention[0], windowDismention[1], "Classy clash");
+    InitWindow(windowWidth, windowHeight, "Classy clash");
 
 
 //== Textures ====================================================================================================================Textures====================
@@ -52,8 +101,8 @@ int main()
 
     Texture2D knight = LoadTexture("characters/knight_idle_spritesheet.png");
     Vector2 knightPos{
-        (float)windowDismention[0] / 2.0f - 4.0f * (0.5f * (float)knight.width / 6.0f),
-        (float)windowDismention[1] / 2.0f - 4.0f * (0.5f * (float)knight.height)
+        (float)windowWidth / 2.0f - 4.0f * (0.5f * (float)knight.width / 6.0f),
+        (float)windowHeight / 2.0f - 4.0f * (0.5f * (float)knight.height)
         // f вкінці означає конвертування в флоат, (float) аналогічно тільки на початку
     };
 
