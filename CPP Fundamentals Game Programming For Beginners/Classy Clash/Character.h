@@ -4,7 +4,7 @@
 class Character {
 public:
     //Getter to world position
-    Vector2 getWorlsPos() { return worldPos; }
+    Vector2 getWorldPos() { return worldPos; }
 
     void setScreenPos(int winWidth, int winHeight);
 
@@ -13,6 +13,7 @@ public:
 
     Character();
     
+    void undoMovement();
 
 private:
 
@@ -22,6 +23,7 @@ private:
 
     Vector2 screenPos{};
     Vector2 worldPos{};
+    Vector2 worldPosLastFrame{};
 
     //1 = right; -1 = left - character direction
     float rightleft{ 1.f };
@@ -35,4 +37,6 @@ private:
 
     float width{};
     float height{};
+
+    
 };

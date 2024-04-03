@@ -20,7 +20,7 @@ int main()
     //map
     Texture2D map = LoadTexture("nature_tileset/OpenWorldMap24x24.png");
     Vector2 mapPos{ 0.0, 0.0 };
-
+    const float mapScale{ 4.0f };
   
     
     // Declare an object of class geeks 
@@ -39,15 +39,22 @@ int main()
         ClearBackground(WHITE);
         
         //moving map in opposite side
-        mapPos = Vector2Scale(knight.getWorlsPos(), -1.f);
+        mapPos = Vector2Scale(knight.getWorldPos(), -1.f);
 
         //draw a background
-        DrawTextureEx(map, mapPos, 0.0, 4, WHITE);
+        DrawTextureEx(map, mapPos, 0.0, mapScale, WHITE);
 
         knight.tick(GetFrameTime());
        
+        //map restrictions - check map dounds
+        if (knight.getWorldPos().x < 0.f ||
+            knight.getWorldPos().y < 0.f ||
+            knight.getWorldPos().x + windowWidth > map.width * mapScale ||
+            knight.getWorldPos().y + windowHeight > map.height * mapScale)
+        {
+            knight.undoMovement();
+        }
 
-        
 
 
         //==End Drawing================================================================================================ End Drawing =======================
