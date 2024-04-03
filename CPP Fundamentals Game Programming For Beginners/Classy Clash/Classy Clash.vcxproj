@@ -130,6 +130,7 @@
     <ClCompile Include="Classy Clash.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="characters\.gitkeep" />
     <None Include="nature_tileset\.gitkeep" />
   </ItemGroup>

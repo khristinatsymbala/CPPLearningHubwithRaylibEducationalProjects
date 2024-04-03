@@ -22,6 +22,7 @@
   <ItemGroup>
     <None Include="nature_tileset\.gitkeep" />
     <None Include="characters\.gitkeep" />
+    <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="nature_tileset\Bush.png">

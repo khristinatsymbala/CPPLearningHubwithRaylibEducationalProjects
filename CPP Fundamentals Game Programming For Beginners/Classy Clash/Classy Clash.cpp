@@ -21,11 +21,15 @@ int main()
     Vector2 mapPos{ 0.0, 0.0 };
     float speed{4.0};
 
-    //knight idle
+    //knight 
     Texture2D knight_idle = LoadTexture("characters/knight_idle_spritesheet.png");
+    Texture2D knight_run = LoadTexture("characters/knight_run_spritesheet.png");
+
+
+    Texture2D knight = LoadTexture("characters/knight_idle_spritesheet.png");
     Vector2 knightPos{
-        (float)windowDismention[0] / 2.0f - 4.0f * (0.5f * (float)knight_idle.width / 6.0f),
-        (float)windowDismention[1] / 2.0f - 4.0f * (0.5f * (float)knight_idle.height)
+        (float)windowDismention[0] / 2.0f - 4.0f * (0.5f * (float)knight.width / 6.0f),
+        (float)windowDismention[1] / 2.0f - 4.0f * (0.5f * (float)knight.height)
         // f вкінці означає конвертування в флоат, (float) аналогічно тільки на початку
     };
 
@@ -72,7 +76,10 @@ int main()
             mapPos = Vector2Subtract(mapPos,Vector2Scale(Vector2Normalize(direction),speed));
             // Умовний тернарний оператор x = (умова) ? значення1 : значення2; 
             direction.x < 0.f ? rightleft = -1.f : rightleft = 1.f;
-            
+            knight = knight_run;
+        }
+        else {
+            knight = knight_idle;
         }
 
         //draw a background
@@ -83,10 +90,10 @@ int main()
         //це Rectangle source - як первинна позиція,Rectangle dest-для майбутнього переміщення
 
 
-        Rectangle source{ frame * (float)knight_idle.width / 6.0f,0.f,rightleft * (float)knight_idle.width / 6.0f,(float)knight_idle.height };
-        Rectangle dest{ knightPos.x,knightPos.y, 4.0f * (float)knight_idle.width / 6.0f , 4.0f * (float)knight_idle.height };
+        Rectangle source{ frame * (float)knight.width / 6.0f,0.f,rightleft * (float)knight.width / 6.0f,(float)knight.height };
+        Rectangle dest{ knightPos.x,knightPos.y, 4.0f * (float)knight.width / 6.0f , 4.0f * (float)knight.height };
 
-        DrawTexturePro(knight_idle, source, dest, Vector2{}, 0.f, WHITE); //Vector2{} - то саме що ініційовувати його за межами
+        DrawTexturePro(knight, source, dest, Vector2{}, 0.f, WHITE); //Vector2{} - то саме що ініційовувати його за межами
 
         //update animation frame - logic dapper dasher
         runningTime += GetFrameTime();
@@ -106,7 +113,7 @@ int main()
 
     }
     UnloadTexture(map);
-    UnloadTexture(knight_idle);
+    UnloadTexture(knight);
     CloseWindow();
 }
 
