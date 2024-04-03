@@ -11,6 +11,9 @@ public:
     //tick function - take care of things that happend every frame
     void tick(float deltaTime);
 
+    Character();
+    
+
 private:
 
     Texture2D texture{ LoadTexture("characters/knight_idle_spritesheet.png") };
@@ -26,7 +29,10 @@ private:
     //animation variables
     float runningTime{};
     int frame{};
-    const int maxFrame{ 6 };//base spritesheet
-    const float updateTime{ 1.f / 12.f };
-    const float speed{ 4.f };
+    int maxFrame{ 6 };//base spritesheet
+    float updateTime{ 1.f / 12.f };
+    float speed{ 4.f };
+
+    float width{};
+    float height{};
 };
