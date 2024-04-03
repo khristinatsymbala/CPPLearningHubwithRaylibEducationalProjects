@@ -4,6 +4,30 @@
 #include <iostream>
 #include <raylib.h>
 #include <raymath.h>
+//== Classes ================================================================================================================= Classes ======================
+class Character {
+public:
+    //Getter to world position
+    Vector2 getWorlsPos() { return worldPos; }
+
+
+private:
+    Texture2D texture;
+    Texture2D idle;
+    Texture2D run;
+
+    Vector2 screenPos;
+    Vector2 worldPos;
+
+    //1 = right; -1 = left - character direction
+    float rightleft{ 1.f };
+
+    //animation variables
+    float runningTime{};
+    int frame{};
+    const int maxFrame{ 6 };//base spritesheet
+    const float updateTime{ 1.f / 12.f };
+};
 
 int main()
 {
