@@ -106,6 +106,8 @@ int main()
     
     // Declare an object of class geeks 
     Character knight;
+
+    knight.setScreenPos(windowWidth, windowHeight);
     
 
     SetTargetFPS(60);
@@ -117,10 +119,13 @@ int main()
         BeginDrawing();
         ClearBackground(WHITE);
         
+        //moving map in opposite side
+        mapPos = Vector2Scale(knight.getWorlsPos(), -1.f);
 
         //draw a background
         DrawTextureEx(map, mapPos, 0.0, 4, WHITE);
 
+        knight.tick(GetFrameTime());
        
 
         
@@ -131,7 +136,7 @@ int main()
 
     }
     UnloadTexture(map);
-    UnloadTexture(knight);
+    
     CloseWindow();
 }
 
