@@ -21,8 +21,8 @@ private:
     Texture2D idle{ LoadTexture("characters/knight_idle_spritesheet.png") };
     Texture2D run{ LoadTexture("characters/knight_run_spritesheet.png") };
 
-    Vector2 screenPos;
-    Vector2 worldPos;
+    Vector2 screenPos {};
+    Vector2 worldPos{};
 
     //1 = right; -1 = left - character direction
     float rightleft{ 1.f };
@@ -44,6 +44,8 @@ void Character::setScreenPos(int winWidth, int winHeight) {
 }
 
 void Character::tick(float deltaTime) {
+
+    //= Movement logic ==============================
     Vector2 direction{};
     if (IsKeyDown(KEY_A)) direction.x -= 1;
     if (IsKeyDown(KEY_D)) direction.x += 1;
@@ -77,6 +79,13 @@ void Character::tick(float deltaTime) {
         if (frame > maxFrame) frame = 0;
 
     }
+
+    //draw a character
+
+    Rectangle source{ frame * (float)texture.width / 6.0f,0.f,rightleft * (float)texture.width / 6.0f,(float)texture.height };
+    Rectangle dest{ screenPos.x,screenPos.y, 4.0f * (float)texture.width / 6.0f , 4.0f * (float)texture.height };
+
+    DrawTexturePro(texture, source, dest, Vector2{}, 0.f, WHITE); //Vector2{} - то саме що ініційовувати його за межами
 }
 
 int main()
@@ -92,28 +101,12 @@ int main()
     //map
     Texture2D map = LoadTexture("nature_tileset/OpenWorldMap24x24.png");
     Vector2 mapPos{ 0.0, 0.0 };
-    float speed{4.0};
 
-    //knight 
-    Texture2D knight_idle = LoadTexture("characters/knight_idle_spritesheet.png");
-    Texture2D knight_run = LoadTexture("characters/knight_run_spritesheet.png");
-
-
-    Texture2D knight = LoadTexture("characters/knight_idle_spritesheet.png");
-    Vector2 knightPos{
-        (float)windowWidth / 2.0f - 4.0f * (0.5f * (float)knight.width / 6.0f),
-        (float)windowHeight / 2.0f - 4.0f * (0.5f * (float)knight.height)
-        // f вкінці означає конвертування в флоат, (float) аналогічно тільки на початку
-    };
-
-    //1 = right; -1 = left - character direction
-    float rightleft{ 1.f };
+  
     
-    //animation variables
-    float runningTime{};
-    int frame{};
-    const int maxFrame{6};//base spritesheet
-    const float updateTime{1.f/12.f};
+    // Declare an object of class geeks 
+    Character knight;
+    
 
     SetTargetFPS(60);
 //== Main game loop ======================================================================================================= Main game loop ======================
@@ -124,61 +117,13 @@ int main()
         BeginDrawing();
         ClearBackground(WHITE);
         
-       
-
-        //= Movement logic ==============================
-
-        Vector2 direction{};
-        if (IsKeyDown(KEY_A)) direction.x -= 1;
-        if (IsKeyDown(KEY_D)) direction.x += 1;
-        if (IsKeyDown(KEY_W)) direction.y -= 1;
-        if (IsKeyDown(KEY_S)) direction.y += 1;
-        
-       
-        //movement checker + animation changer
-        if (Vector2Length(direction) != 0.0) {
-
-            /*
-            To normalize movement along the diagonal, it is imperative to define either this vector normalized or a singular vector. 
-           
-            set mapPos = mapPos - direction - рух мапи !
-
-            Vector2Scale(Vector2Normalize(direction),speed) - це врегулювання швидкості руху, ми множимо швидкість на сам мувмент
-            */
-            
-            mapPos = Vector2Subtract(mapPos,Vector2Scale(Vector2Normalize(direction),speed));
-            // Умовний тернарний оператор x = (умова) ? значення1 : значення2; 
-            direction.x < 0.f ? rightleft = -1.f : rightleft = 1.f;
-            knight = knight_run;
-        }
-        else {
-            knight = knight_idle;
-        }
 
         //draw a background
         DrawTextureEx(map, mapPos, 0.0, 4, WHITE);
 
-        //draw a character
-        //не забуваєм що для позиції треба створювати додаткові макети ректанглу, для майбутнього DrawTexturePro 
-        //це Rectangle source - як первинна позиція,Rectangle dest-для майбутнього переміщення
+       
 
-
-        Rectangle source{ frame * (float)knight.width / 6.0f,0.f,rightleft * (float)knight.width / 6.0f,(float)knight.height };
-        Rectangle dest{ knightPos.x,knightPos.y, 4.0f * (float)knight.width / 6.0f , 4.0f * (float)knight.height };
-
-        DrawTexturePro(knight, source, dest, Vector2{}, 0.f, WHITE); //Vector2{} - то саме що ініційовувати його за межами
-
-        //update animation frame - logic dapper dasher
-        runningTime += GetFrameTime();
-
-        if (runningTime>=updateTime)
-        {
-            frame++;
-            runningTime = 0.f;
-            if (frame > maxFrame) frame = 0;
-         
-        }
-
+        
 
 
         //==End Drawing================================================================================================ End Drawing =======================
