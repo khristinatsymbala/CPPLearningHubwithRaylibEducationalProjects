@@ -1,0 +1,12 @@
+﻿  dasher.cpp
+E:\CPP\Game_Development\Raylib\Dapper Dasher\dasher.cpp(50,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\CPP\Game_Development\Raylib\Dapper Dasher\dasher.cpp(51,32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\CPP\Game_Development\Raylib\Dapper Dasher\dasher.cpp(59,30): warning C4305: '=': truncation from 'double' to 'float'
+E:\CPP\Game_Development\Raylib\Dapper Dasher\dasher.cpp(75,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\CPP\Game_Development\Raylib\Dapper Dasher\dasher.cpp(76,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\CPP\Game_Development\Raylib\Dapper Dasher\dasher.cpp(78,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\CPP\Game_Development\Raylib\Dapper Dasher\dasher.cpp(79,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\CPP\Game_Development\Raylib\Dapper Dasher\dasher.cpp(166,23): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+  Dapper Dasher.vcxproj -> E:\CPP\Game_Development\Raylib\Dapper Dasher\x64\Debug\Dapper Dasher.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
