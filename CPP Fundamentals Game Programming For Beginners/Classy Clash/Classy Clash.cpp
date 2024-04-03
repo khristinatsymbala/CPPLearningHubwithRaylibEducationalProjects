@@ -62,9 +62,8 @@ int main()
         if (Vector2Length(direction) != 0.0) {
 
             /*
-            для нормалізації руху по діагоналі нам обов'язково потрібно задати цьому векторНормалайз або одиночний вектор
-            далі описується логіка саме цього процесу
-
+           To normalize movement along the diagonal, it is imperative to define either this vector normalized or a singular vector. 
+           
             set mapPos = mapPos - direction - рух мапи !
 
             Vector2Scale(Vector2Normalize(direction),speed) - це врегулювання швидкості руху, ми множимо швидкість на сам мувмент

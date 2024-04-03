@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\CPP\\Game_Development\\Raylib\\Classy Clash\\",
+  "WorkspaceRootPath": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|E:\\CPP\\Game_Development\\Raylib\\Classy Clash\\Classy Clash.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|solutionrelative:Classy Clash.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Classy Clash.cpp",
-              "DocumentMoniker": "E:\\CPP\\Game_Development\\Raylib\\Classy Clash\\Classy Clash.cpp",
+              "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp",
               "RelativeDocumentMoniker": "Classy Clash.cpp",
-              "ToolTip": "E:\\CPP\\Game_Development\\Raylib\\Classy Clash\\Classy Clash.cpp",
+              "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp",
               "RelativeToolTip": "Classy Clash.cpp",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAE8AAAAyAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEEAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-02T15:12:47.798Z",
               "EditorCaption": ""
