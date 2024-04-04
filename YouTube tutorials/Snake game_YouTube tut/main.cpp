@@ -13,6 +13,8 @@ Color darkGreen {43,51, 24, 255};
 int cellSize {30};
 int cellCount{25};
 
+int offset = 75;
+
 //variable to track a time 
 double lastUpdateTime {0};
 
@@ -60,7 +62,7 @@ public:
             float x = body[i].x;
             float y = body[i].y;
             //DrawRectangle(x*cellSize, y*cellSize, cellSize, cellSize, darkGreen);
-            Rectangle segment = Rectangle {x*cellSize, y*cellSize, (float)cellSize, (float)cellSize};
+            Rectangle segment = Rectangle{offset + x * cellSize, offset + y * cellSize, (float)cellSize, (float)cellSize};
             DrawRectangleRounded(segment, 0.5, 6, darkGreen);
         }
     }
@@ -115,8 +117,7 @@ public:
     }
     // метод класу для промальовки
     void Drav(){
-        DrawTexture(texture, positon.x*cellSize, positon.y*cellSize, WHITE);
-        //WHITE here is overlay
+        DrawTexture(texture, offset + positon.x * cellSize, offset + positon.y * cellSize, WHITE);        //WHITE here is overlay
     }
 
     Vector2 GenerateRandomCell()
@@ -155,7 +156,24 @@ class Game
     Snake snake = Snake();
     Food food = Food(snake.body);
     bool running = true;
+    int score {0};
 
+    Sound eatSound;
+    Sound wallSound;
+
+    Game()
+    {
+        InitAudioDevice();
+        eatSound = LoadSound("Sounds/eat.mp3");
+        wallSound = LoadSound("Sounds/wall.mp3");
+    }
+
+    ~Game()
+    {
+        UnloadSound(eatSound);
+        UnloadSound(wallSound);
+        CloseAudioDevice();
+    }
     
     void Draw(){
         food.Drav();
@@ -169,6 +187,7 @@ class Game
         snake.Update();
         CheckCollitionWithFood();
         CheckCollisionWithEdges();
+        CheckCollisionWithTail();
         }
         
     }
@@ -179,6 +198,8 @@ class Game
         {
             food.positon = food.GenerateRandomPos(snake.body);
             snake.addSegments = true;
+            score++;
+            PlaySound(eatSound);
         }
     }
 
@@ -198,6 +219,8 @@ class Game
         snake.Reset();
         food.positon = food.GenerateRandomPos(snake.body);
         running = false;
+        score = 0;
+        PlaySound(wallSound);
     }
 
     void CheckCollisionWithTail(){
@@ -216,7 +239,7 @@ int main()
 
 
 //initialize a window
-InitWindow (cellCount*cellCount, cellCount*cellCount,"Retro Snake");
+InitWindow (2 * offset + cellSize * cellCount, 2 * offset + cellSize * cellCount, "Retro Snake");
 
 Game game = Game();
 
@@ -260,6 +283,10 @@ while (!WindowShouldClose()) // equal (true != WindowShouldClose()) - short cut
     //set up a color to background - це робиться щоб при зміні кадрів все було красиво та плавно
     ClearBackground(green);
 
+    DrawRectangleLinesEx(Rectangle{(float)offset - 5, (float)offset - 5, (float)cellSize * cellCount + 10, (float)cellSize * cellCount + 10}, 5, darkGreen);
+
+    DrawText("Retro Snake", offset - 5, 20, 40, darkGreen);
+    DrawText(TextFormat("%i", game.score), offset - 5, offset + cellSize * cellCount + 10, 40, darkGreen);
    game.Draw();
 
     
