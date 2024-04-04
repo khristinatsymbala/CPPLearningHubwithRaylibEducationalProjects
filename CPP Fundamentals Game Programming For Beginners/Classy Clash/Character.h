@@ -6,12 +6,13 @@ public:
     //Getter to world position
     Vector2 getWorldPos() { return worldPos; }
 
-    void setScreenPos(int winWidth, int winHeight);
+   
 
     //tick function - take care of things that happend every frame
     void tick(float deltaTime);
 
-    Character();
+    
+    Character(int winWidth, int winHeight);
     
     void undoMovement();
 
@@ -38,5 +39,5 @@ private:
     float width{};
     float height{};
 
-    
+    float scale{ 4.0f };
 };
