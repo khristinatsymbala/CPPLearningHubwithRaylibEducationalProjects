@@ -132,6 +132,7 @@ public:
         return Vector2{x, y};
     }
 
+    
 
     //randomizer  
     Vector2 GenerateRandomPos(std::deque<Vector2> snakeBody){
@@ -167,7 +168,7 @@ class Game
         {
         snake.Update();
         CheckCollitionWithFood();
-        CheckColitionWithEdges();
+        CheckCollisionWithEdges();
         }
         
     }
@@ -181,13 +182,14 @@ class Game
         }
     }
 
-    void CheckColitionWithEdges(){
-        //snake.body[0].x == cellCount - right side of the screen
-        //snake.body[0].x == -1 - left side of the screen
-        if(snake.body[0].x == cellCount || snake.body[0].x == -1 ){
+    void CheckCollisionWithEdges()
+    {
+        if (snake.body[0].x == cellCount || snake.body[0].x == -1)
+        {
             GameOver();
         }
-        if (snake.body[0].y == cellCount || snake.body[0].y == -1 ){
+        if (snake.body[0].y == cellCount || snake.body[0].y == -1)
+        {
             GameOver();
         }
     }
@@ -225,18 +227,22 @@ while (!WindowShouldClose()) // equal (true != WindowShouldClose()) - short cut
     //snake.direction.y != 1 - handler, so as not to change the direction to the opposite
     if(IsKeyPressed(KEY_UP) && game.snake.direction.y != 1){
         game.snake.direction = {0, -1};
+        game.running = true;
     }
 
     if(IsKeyPressed(KEY_DOWN) && game.snake.direction.y != -1){
         game.snake.direction = {0, 1};
+        game.running = true;
     }
 
     if(IsKeyPressed(KEY_RIGHT) && game.snake.direction.x != -1){
         game.snake.direction = {1, 0};
+        game.running = true;
     }
 
     if(IsKeyPressed(KEY_LEFT) && game.snake.direction.x != 1){
         game.snake.direction = {-1, 0};
+        game.running = true;
     }
 
     //======================================
