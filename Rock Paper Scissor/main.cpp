@@ -199,15 +199,6 @@ class Game
         food.positon = food.GenerateRandomPos(snake.body);
         running = false;
     }
-
-    void CheckCollisionWithTail(){
-        std::deque<Vector2> headlessBody = snake.body;
-        headlessBody.pop_front();
-        if (ElementInDeque(snake.body[0], headlessBody))
-        {
-            GameOver();
-        }
-    }
 };
 
 int main()
