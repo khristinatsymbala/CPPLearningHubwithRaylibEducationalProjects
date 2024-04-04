@@ -2,12 +2,7 @@
 
 
 //called fully qualifying the function name and the two colons is known as the scope resolution
-void Character::setScreenPos(int winWidth, int winHeight) {
-    screenPos = {
-        (float)winWidth / 2.0f - 4.0f * (0.5f * width),
-        (float)winHeight / 2.0f - 4.0f * (0.5f * height)
-    };
-}
+
 
 void Character::tick(float deltaTime) {
 
@@ -52,15 +47,21 @@ void Character::tick(float deltaTime) {
     //draw a character
 
     Rectangle source{ frame * width,0.f,rightleft * width,height };
-    Rectangle dest{ screenPos.x,screenPos.y, 4.0f * width , 4.0f * height };
+    Rectangle dest{ screenPos.x,screenPos.y, scale * width , 4.0f * height };
 
     DrawTexturePro(texture, source, dest, Vector2{}, 0.f, WHITE); //Vector2{} - то саме що ініційовувати його за межами
 }
 
-Character::Character()
+
+Character::Character(int winWidth, int winHeight)
 {
     width = texture.width / maxFrame;
     height = texture.height;
+
+    screenPos = {
+        static_cast<float> (winWidth) / 2.0f - scale * (0.5f * width),
+        static_cast<float> (winHeight) / 2.0f - scale * (0.5f * height)
+    };
 }
 
 void Character::undoMovement()

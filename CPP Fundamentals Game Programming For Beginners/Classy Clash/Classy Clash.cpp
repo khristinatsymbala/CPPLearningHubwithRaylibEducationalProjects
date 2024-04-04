@@ -24,10 +24,7 @@ int main()
   
     
     // Declare an object of class geeks 
-    Character knight;
-
-    knight.setScreenPos(windowWidth, windowHeight);
-    
+    Character knight{ windowWidth, windowHeight };
 
     SetTargetFPS(60);
 //== Main game loop ======================================================================================================= Main game loop ======================

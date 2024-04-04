@@ -26,6 +26,9 @@
     <None Include="nature_tileset\.gitkeep" />
     <None Include="characters\.gitkeep" />
     <None Include=".gitignore" />
+    <None Include="x64\Debug\raylib.dll" />
+    <None Include="x64\Debug\Classy Clash.exe" />
+    <None Include="x64\Debug\Classy Clash.pdb" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="nature_tileset\Bush.png">

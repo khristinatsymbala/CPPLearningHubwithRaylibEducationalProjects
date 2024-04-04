@@ -134,6 +134,9 @@
     <None Include=".gitignore" />
     <None Include="characters\.gitkeep" />
     <None Include="nature_tileset\.gitkeep" />
+    <None Include="x64\Debug\Classy Clash.exe" />
+    <None Include="x64\Debug\Classy Clash.pdb" />
+    <None Include="x64\Debug\raylib.dll" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="characters\goblin_idle_spritesheet.png" />
