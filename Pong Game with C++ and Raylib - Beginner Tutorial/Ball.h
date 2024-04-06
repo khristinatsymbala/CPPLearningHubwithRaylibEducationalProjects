@@ -4,7 +4,7 @@
 class Ball
 {
 private:
-    
+    Color Yellow = Color{243, 213, 91, 255};
 public:
     float x{};
     float y{};
@@ -17,10 +17,10 @@ public:
     int speedX{};
     int speedY{};
 
-
+    int player_score = 0;
+    int cpu_score = 0;
     
-    Ball(/* args */);
-    ~Ball();
+    void ResetBall();
 };
 
 

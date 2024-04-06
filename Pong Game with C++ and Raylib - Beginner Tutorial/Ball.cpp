@@ -2,7 +2,7 @@
 
 void Ball::Draw()
 {
-     DrawCircle(x, y, radius, WHITE);
+     DrawCircle(x, y, radius, Yellow);
 }
 
 void Ball::Update()
@@ -16,20 +16,27 @@ void Ball::Update()
         speedY *= -1;
     }
 
-    if (x + radius >= GetScreenWidth() || x - radius <= 0)
+    if (x + radius >= GetScreenWidth())//CPU wins
     {
-        speedX *= -1;
+        cpu_score++;
+        ResetBall();
+    } 
+    if( x - radius <= 0)
+    {
+        player_score++;
+        ResetBall();
     }
     
     
 }
 
-
-
-Ball::Ball(/* args */)
+void Ball::ResetBall()
 {
-}
+    x = GetScreenWidth()/2;
+    y = GetScreenHeight()/2;
 
-Ball::~Ball()
-{
+    int speedChoise[2] = {-1,1};
+
+    speedX *= speedChoise[GetRandomValue(0,1)];
+    speedY *= speedChoise[GetRandomValue(0,1)];
 }

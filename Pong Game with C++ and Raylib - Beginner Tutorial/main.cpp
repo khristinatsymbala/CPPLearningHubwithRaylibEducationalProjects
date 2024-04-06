@@ -3,6 +3,11 @@
 #include "Ball.h"
 #include "Paddle.h"
 
+Color Green = Color{38, 185, 154, 255};
+Color Dark_Green = Color{20, 160, 133, 255};
+Color Light_Green = Color{129, 204, 184, 255};
+
+
 
 Ball ball;
 
@@ -66,17 +71,18 @@ int main(){
         }
 
         //Drawing=================================
-        ClearBackground(BLACK); // update a window every frame
+        ClearBackground(Dark_Green); // update a window every frame
+        DrawRectangle(windowWidth / 2, 0, windowWidth / 2, windowHeight, Green);
+        DrawCircle(windowWidth / 2, windowHeight / 2, 150, Light_Green);
 
         DrawLine(windowWidth/2,0,windowWidth/2,windowHeight,WHITE);
 
-       ball.Draw();
-
-
+        ball.Draw();
         cpu.Draw();
         player.Draw();
     
-
+        DrawText(TextFormat("%i", ball.cpu_score),windowWidth/4-20,20,80,WHITE);
+        DrawText(TextFormat("%i", ball.player_score),3*windowWidth/4-20,20,80,WHITE);
 
         EndDrawing();
     }
