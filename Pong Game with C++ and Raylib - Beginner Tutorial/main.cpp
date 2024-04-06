@@ -20,8 +20,8 @@ int main(){
     ball.x = windowWidth/2;
     ball.y = windowHeight/2;
 
-    ball.SetterSpeedX(7);
-    ball.SetterSpeedY(7);
+    ball.speedX = 7;
+    ball.speedY = 7;
 //=== paddle_player ====================================
     player.widht = 30;
     player.height = 120;
@@ -55,6 +55,15 @@ int main(){
         ball.Update();
         player.Update();
         cpu.Update(ball.y);
+
+        //Checking collision =====================
+        if(CheckCollisionCircleRec(Vector2{ball.x,ball.y}, ball.radius, Rectangle{player.x, player.y, player.widht, player.height})){
+                ball.speedX *= -1;
+        }
+
+        if(CheckCollisionCircleRec(Vector2{ball.x,ball.y}, ball.radius, Rectangle{cpu.x, cpu.y, cpu.widht, cpu.height})){
+                ball.speedX *= -1;
+        }
 
         //Drawing=================================
         ClearBackground(BLACK); // update a window every frame

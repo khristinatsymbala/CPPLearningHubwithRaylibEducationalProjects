@@ -24,15 +24,7 @@ void Ball::Update()
     
 }
 
-void Ball::SetterSpeedX(int sX)
-{
-    speedX = sX;
-}
 
-void Ball::SetterSpeedY(int sY)
-{
-    speedY = sY;
-}
 
 Ball::Ball(/* args */)
 {

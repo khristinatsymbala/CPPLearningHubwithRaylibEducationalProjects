@@ -4,8 +4,7 @@
 class Ball
 {
 private:
-    int speedX{};
-    int speedY{};
+    
 public:
     float x{};
     float y{};
@@ -15,13 +14,9 @@ public:
     void Draw();
     void Update();
 
-// Setter =================
-    void SetterSpeedX(int sX);
-    void SetterSpeedY(int sY);
+    int speedX{};
+    int speedY{};
 
-//Getter ===================
-    int getSX(){return speedX;}
-    int getSY(){return speedY;}
 
     
     Ball(/* args */);

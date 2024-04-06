@@ -3,7 +3,8 @@
 
 class Paddle
 {
-private:
+protected:
+    void LimitMovement();
     /* data */
 public:
     float x{};
