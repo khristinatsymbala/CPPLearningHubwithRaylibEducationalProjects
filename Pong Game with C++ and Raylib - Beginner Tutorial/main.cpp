@@ -7,6 +7,7 @@
 Ball ball;
 
 Paddle player;
+CPUPaddle cpu;
 
 
 int main(){
@@ -30,6 +31,16 @@ int main(){
 
     player.speed = 6;
 
+//=== cpu paddle_player ====================================
+
+    cpu.widht = 30;
+    cpu.height = 120;
+
+    cpu.x = 10;
+    cpu.y = windowHeight/2 - cpu.height/2;
+
+    cpu.speed = 6;
+
 //window ========================================
     
     InitWindow(windowWidth,windowHeight,"Pong Game!");
@@ -43,6 +54,7 @@ int main(){
         //Updating===============================
         ball.Update();
         player.Update();
+        cpu.Update(ball.y);
 
         //Drawing=================================
         ClearBackground(BLACK); // update a window every frame
@@ -52,7 +64,7 @@ int main(){
        ball.Draw();
 
 
-        DrawRectangle(10, windowHeight/2 - 60, 30, 120, WHITE);
+        cpu.Draw();
         player.Draw();
     
 

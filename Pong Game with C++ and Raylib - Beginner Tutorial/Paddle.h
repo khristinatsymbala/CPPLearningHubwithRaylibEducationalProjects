@@ -19,4 +19,15 @@ public:
     
 };
 
+class CPUPaddle: public Paddle
+{
+private:
+    /* data */
+public:
+
+    void Update(int ball_y);
+    
+};
+
+
 
