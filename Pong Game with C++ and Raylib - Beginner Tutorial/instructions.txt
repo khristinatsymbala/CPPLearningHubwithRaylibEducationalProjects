@@ -1,5 +1,21 @@
 Plan:
 1.Create a blanc screen & Game loop
+int main(){
+//===Variables====================================
+    const int windowWidth{1280};
+    const int windowHeight{800};
+//window ========================================
+    InitWindow(windowWidth,windowHeight,"Pong Game!");
+//Game loop ======================================
+    SetTargetFPS(60);
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+        EndDrawing();
+    }
+    CloseWindow();
+}
+
 2.Draw the paddle and the ball
 3.Move the ball around
 4.Check the collition
