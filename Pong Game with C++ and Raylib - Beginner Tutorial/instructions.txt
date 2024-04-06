@@ -1,0 +1,9 @@
+Plan:
+1.Create a blanc screen & Game loop
+2.Draw the paddle and the ball
+3.Move the ball around
+4.Check the collition
+5.Move the player's paddle 
+6.Move the CPU paddle with Artificial Itelligence
+7.Check for collition with the paddles
+8.Add scoring
