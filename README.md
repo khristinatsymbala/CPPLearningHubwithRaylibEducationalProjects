@@ -7,3 +7,4 @@ This repository serves as a record of my progress and the skills I am acquiring 
 
 YouTube tutorials:
 - Snake game - https://www.youtube.com/watch?v=LGqsnM_WEK4&list=PLwR6ZGPvjVOSRywn9VCQ3yrRVruxzzuo9&index=4
+- Pong game - https://www.youtube.com/watch?v=VLJlTaFvHo4&list=PLwR6ZGPvjVOSRywn9VCQ3yrRVruxzzuo9&index=2
