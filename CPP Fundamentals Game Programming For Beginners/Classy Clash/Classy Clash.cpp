@@ -5,6 +5,7 @@
 #include <raylib.h>
 #include <raymath.h>
 #include "Character.h"
+#include "Prop.h"
 
 
 int main()
@@ -26,6 +27,9 @@ int main()
     // Declare an object of class geeks 
     Character knight{ windowWidth, windowHeight };
 
+    Prop rock{ Vector2{0.0,0.0},LoadTexture("nature_tileset/Rock.png") };
+    
+
     SetTargetFPS(60);
 //== Main game loop ======================================================================================================= Main game loop ======================
     while (!WindowShouldClose())
@@ -40,6 +44,8 @@ int main()
 
         //draw a background
         DrawTextureEx(map, mapPos, 0.0, mapScale, WHITE);
+
+        rock.Render(knight.getWorldPos());
 
         knight.tick(GetFrameTime());
        
