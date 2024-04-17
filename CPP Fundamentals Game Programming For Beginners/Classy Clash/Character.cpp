@@ -64,17 +64,3 @@ Character::Character(int winWidth, int winHeight)
     };
 }
 
-void Character::undoMovement()
-{
-    worldPos = worldPosLastFrame;
-}
-
-Rectangle Character::getCollitionRec()
-{
-    return Rectangle{
-            screenPos.x,
-            screenPos.y,
-            width * scale,
-            height * scale
-    };
-}
