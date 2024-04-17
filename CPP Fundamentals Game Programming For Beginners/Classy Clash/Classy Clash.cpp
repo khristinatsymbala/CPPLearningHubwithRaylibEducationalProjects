@@ -35,6 +35,8 @@ int main()
     };
 
     Enemy goblin( Vector2{ 300.f, 300.f }, LoadTexture("characters/goblin_idle_spritesheet.png"), LoadTexture("characters/goblin_run_spritesheet.png"));
+    goblin.setTarget(&knight);
+
 
     SetTargetFPS(60);
 //== Main game loop ======================================================================================================= Main game loop ======================
@@ -76,6 +78,7 @@ int main()
         }
 
         goblin.tick(GetFrameTime());
+        
 
         //==End Drawing================================================================================================ End Drawing =======================
         EndDrawing();

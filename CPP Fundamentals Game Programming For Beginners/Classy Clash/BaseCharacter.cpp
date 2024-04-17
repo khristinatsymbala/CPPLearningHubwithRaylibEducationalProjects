@@ -43,4 +43,4 @@ void BaseCharacter::tick(float deltaTime)
 
     DrawTexturePro(texture, source, dest, Vector2{}, 0.f, WHITE); //Vector2{} - то саме що ініційовувати його за межами
 }
-}
+
