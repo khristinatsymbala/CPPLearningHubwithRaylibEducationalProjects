@@ -6,11 +6,8 @@ public:
     //Getter to world position
     Vector2 getWorldPos() { return worldPos; }
 
-   
-
     //tick function - take care of things that happend every frame
     void tick(float deltaTime);
-
     
     Character(int winWidth, int winHeight);
     

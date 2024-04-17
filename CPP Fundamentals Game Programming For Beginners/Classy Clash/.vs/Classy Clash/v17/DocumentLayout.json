@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|solutionrelative:Classy Clash.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Prop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|solutionrelative:Prop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|solutionrelative:Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|solutionrelative:Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\prop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3176D7C6-4B4C-4BE4-A4A6-6DB8E32C272E}|Classy Clash.vcxproj|solutionrelative:prop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,19 +30,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Prop.h",
-              "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Prop.h",
-              "RelativeDocumentMoniker": "Prop.h",
-              "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Prop.h",
-              "RelativeToolTip": "Prop.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-04T17:19:08.266Z",
+              "DocumentIndex": 0,
+              "Title": "Classy Clash.cpp",
+              "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp",
+              "RelativeDocumentMoniker": "Classy Clash.cpp",
+              "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp",
+              "RelativeToolTip": "Classy Clash.cpp",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAADQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-02T15:12:47.798Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -53,51 +53,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Enemy.cpp",
+              "RelativeDocumentMoniker": "Enemy.cpp",
+              "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Enemy.cpp",
+              "RelativeToolTip": "Enemy.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-17T12:18:48.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Enemy.h",
+              "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Enemy.h",
+              "RelativeDocumentMoniker": "Enemy.h",
+              "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Enemy.h",
+              "RelativeToolTip": "Enemy.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-17T12:18:32.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Character.cpp",
               "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Character.cpp",
               "RelativeDocumentMoniker": "Character.cpp",
               "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Character.cpp",
               "RelativeToolTip": "Character.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFAAAAAAAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAEkAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-03T19:49:03.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Classy Clash.cpp",
-              "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp",
-              "RelativeDocumentMoniker": "Classy Clash.cpp",
-              "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp*",
-              "RelativeToolTip": "Classy Clash.cpp*",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAwDgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-02T15:12:47.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "prop.cpp",
-              "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\prop.cpp",
-              "RelativeDocumentMoniker": "prop.cpp",
-              "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\prop.cpp",
-              "RelativeToolTip": "prop.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-04T17:19:20.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Character.h",
               "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Character.h",
               "RelativeDocumentMoniker": "Character.h",
               "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Character.h",
               "RelativeToolTip": "Character.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-03T19:48:44.355Z",
               "EditorCaption": ""
