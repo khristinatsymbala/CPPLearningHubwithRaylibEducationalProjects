@@ -9,10 +9,10 @@ public:
 	~BaseCharacter();
 
     Vector2 getWorldPos() { return worldPos; }
-
     void undoMovement();
-
     Rectangle getCollitionRec();
+
+    virtual void tick(float deltaTime);
 
 protected:
         Texture2D texture{ LoadTexture("characters/knight_idle_spritesheet.png") };
