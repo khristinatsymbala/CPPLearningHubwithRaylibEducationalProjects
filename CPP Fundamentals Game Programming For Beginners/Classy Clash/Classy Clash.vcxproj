@@ -130,6 +130,7 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Classy Clash.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="BaseCharacter.cpp" />
     <ClCompile Include="prop.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="Character.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="BaseCharacter.h" />
     <ClInclude Include="Prop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
