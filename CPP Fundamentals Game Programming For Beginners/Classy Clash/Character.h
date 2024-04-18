@@ -12,9 +12,9 @@ public:
 
     //tick function - take care of things that happend every frame
     virtual void tick(float deltaTime) override;
-    
+
     Character(int winWidth, int winHeight);
-    
+    Vector2 getScrenPos() { return screenPos; };
 private:
 
 };
