@@ -19,16 +19,8 @@ Enemy::~Enemy()
 
 void Enemy::tick(float deltaTime)
 {
-    //go to target 
-    Vector2 toTarget = Vector2Subtract(target->getScrenPos(), screenPos);
-    //nirmalize to Target
-    toTarget = Vector2Normalize(toTarget);
-    //multiply toTarget by speed
-    toTarget = Vector2Scale(toTarget, speed);
-    //move the Enemy
-    worldPos = Vector2Add(worldPos,toTarget);
-
-    screenPos =  Vector2Subtract(worldPos,target->getWorldPos());
+  
+    velocity = Vector2Subtract(target->getScreenPos(), getScreenPos());
     BaseCharacter::tick(deltaTime);
     
 }
@@ -36,6 +28,11 @@ void Enemy::tick(float deltaTime)
 void Enemy::setTarget(Character*character)
 {
     target = character;
+}
+
+Vector2 Enemy::getScreenPos()
+{
+    return Vector2Subtract(worldPos, target->getWorldPos());;
 }
 
 

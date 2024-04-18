@@ -13,6 +13,7 @@ public:
     virtual void tick(float deltaTime) override;
 
 	void setTarget(Character* character);
+	virtual Vector2 getScreenPos() override;
 
 private:
 	Character* target;
