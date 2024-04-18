@@ -7,6 +7,7 @@
 
 void Character::tick(float deltaTime) {
 
+    if (!getAlive()) return;
 
     //= Movement logic ==============================
 
@@ -22,7 +23,8 @@ void Character::tick(float deltaTime) {
     if (rightleft > 0.f) {
         origin = { 0.f, weapon.height * scale };
         offset = { 35.f, 55.f };
-        rotation = 35.f;
+        rotation = IsMouseButtonDown(MOUSE_LEFT_BUTTON) ? 35.f : 0.f;
+        
 
         weaponCollitionRec = { getScreenPos().x + offset.x ,
             getScreenPos().y + offset.y - weapon.height* scale,
@@ -33,7 +35,7 @@ void Character::tick(float deltaTime) {
     else {
         origin = { weapon.width * scale, weapon.height * scale };
         offset = { 25.f, 55.f };
-        rotation = - 35.f;
+        rotation = IsMouseButtonDown(MOUSE_LEFT_BUTTON) ? -35.f : 0.f;
 
         weaponCollitionRec = { getScreenPos().x + offset.x - weapon.width * scale ,
            getScreenPos().y + offset.y - weapon.height * scale,

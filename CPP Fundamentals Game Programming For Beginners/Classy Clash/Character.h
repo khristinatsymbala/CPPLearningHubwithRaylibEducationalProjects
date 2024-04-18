@@ -15,6 +15,8 @@ public:
 
     Character(int winWidth, int winHeight);
     virtual Vector2 getScreenPos() override;
+
+    Rectangle getWeaponCollition() { return weaponCollitionRec; };
 private:
     int windowWidth{};
     int windowHeight{};
