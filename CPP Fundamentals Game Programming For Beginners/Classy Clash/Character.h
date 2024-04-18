@@ -17,11 +17,16 @@ public:
     virtual Vector2 getScreenPos() override;
 
     Rectangle getWeaponCollition() { return weaponCollitionRec; };
+
+    float getHealth() const { return health; };
+    void takeDamage(float damage);
+
 private:
     int windowWidth{};
     int windowHeight{};
     Texture2D weapon{ LoadTexture("characters/weapon_sword.png") };
     Rectangle weaponCollitionRec{};
+    float health{100.f};
 };
 
 
