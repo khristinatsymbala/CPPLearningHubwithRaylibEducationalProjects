@@ -7,6 +7,7 @@
 #include "Character.h"
 #include "Prop.h"
 #include "Enemy.h"
+#include <string>
 
 
 int main()
@@ -34,9 +35,21 @@ int main()
     Prop{Vector2{400.f, 500.f}, LoadTexture("nature_tileset/Log.png")}
     };
 
-    Enemy goblin( Vector2{ 300.f, 300.f }, LoadTexture("characters/goblin_idle_spritesheet.png"), LoadTexture("characters/goblin_run_spritesheet.png"));
-    goblin.setTarget(&knight);
+    Enemy goblin{ Vector2{ 800.f, 800.f }, LoadTexture("characters/goblin_idle_spritesheet.png"), LoadTexture("characters/goblin_run_spritesheet.png") };
+    
 
+    Enemy slime{Vector2{ 500.f, 300.f }, LoadTexture("characters/slime_idle_spritesheet.png"), LoadTexture("characters/slime_run_spritesheet.png")};
+
+    Enemy* enemies[]{
+        &goblin,
+        &slime
+    };
+
+    for (auto enemy:enemies)
+    {
+        enemy->setTarget(&knight);
+    }
+    
 
     SetTargetFPS(60);
 //== Main game loop ======================================================================================================= Main game loop ======================
@@ -59,6 +72,18 @@ int main()
             prop.Render(knight.getWorldPos());
         }
 
+        //health display
+        if (!knight.getAlive()) {//not alive
+            DrawText("Game over", 55.f, 45.f, 40, RED);
+            EndDrawing();
+            continue;
+        }
+        else {//alive
+            std::string knightHealth = "Health: ";
+            knightHealth.append(std::to_string(knight.getHealth()), 0, 5);
+            DrawText(knightHealth.c_str(), 55.f, 45.f, 40, RED);
+        }
+
         knight.tick(GetFrameTime());
        
         //map restrictions - check map dounds
@@ -77,8 +102,24 @@ int main()
             }
         }
 
-        goblin.tick(GetFrameTime());
         
+        for (auto enemy : enemies)
+        {
+            enemy->tick(GetFrameTime());
+        }
+
+        
+        //Collition weapon
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            
+            for (auto enemy : enemies)
+            {
+                if (CheckCollisionRecs(goblin.getCollitionRec(), knight.getWeaponCollition())) {
+                    enemy->setAlive(false);
+                }
+            }
+        }
+       
 
         //==End Drawing================================================================================================ End Drawing =======================
         EndDrawing();

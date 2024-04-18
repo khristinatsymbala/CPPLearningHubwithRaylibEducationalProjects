@@ -12,11 +12,21 @@ public:
 
     //tick function - take care of things that happend every frame
     virtual void tick(float deltaTime) override;
-    
-    Character(int winWidth, int winHeight);
-    
-private:
 
+    Character(int winWidth, int winHeight);
+    virtual Vector2 getScreenPos() override;
+
+    Rectangle getWeaponCollition() { return weaponCollitionRec; };
+
+    float getHealth() const { return health; };
+    void takeDamage(float damage);
+
+private:
+    int windowWidth{};
+    int windowHeight{};
+    Texture2D weapon{ LoadTexture("characters/weapon_sword.png") };
+    Rectangle weaponCollitionRec{};
+    float health{100.f};
 };
 
 

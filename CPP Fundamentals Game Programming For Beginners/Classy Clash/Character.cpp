@@ -7,45 +7,72 @@
 
 void Character::tick(float deltaTime) {
 
-    BaseCharacter::tick(deltaTime);
+    if (!getAlive()) return;
 
     //= Movement logic ==============================
-    Vector2 direction{};
-    if (IsKeyDown(KEY_A)) direction.x -= 1;
-    if (IsKeyDown(KEY_D)) direction.x += 1;
-    if (IsKeyDown(KEY_W)) direction.y -= 1;
-    if (IsKeyDown(KEY_S)) direction.y += 1;
 
+    if (IsKeyDown(KEY_A)) velocity.x -= 1;
+    if (IsKeyDown(KEY_D)) velocity.x += 1;
+    if (IsKeyDown(KEY_W)) velocity.y -= 1;
+    if (IsKeyDown(KEY_S)) velocity.y += 1;
+    BaseCharacter::tick(deltaTime);
 
-    //movement checker + animation changer
-    if (Vector2Length(direction) != 0.0) {
+    Vector2 origin{};
+    Vector2 offset{};
+    float rotation{};
+    if (rightleft > 0.f) {
+        origin = { 0.f, weapon.height * scale };
+        offset = { 35.f, 55.f };
+        rotation = IsMouseButtonDown(MOUSE_LEFT_BUTTON) ? 35.f : 0.f;
+        
 
-        /*
-        set worldPos = worldPos + direction - рух мапи !
-        */
-
-        worldPos = Vector2Add(worldPos, Vector2Scale(Vector2Normalize(direction), speed));
-        // Умовний тернарний оператор x = (умова) ? значення1 : значення2; 
-        direction.x < 0.f ? rightleft = -1.f : rightleft = 1.f;
-        texture = run;
-
+        weaponCollitionRec = { getScreenPos().x + offset.x ,
+            getScreenPos().y + offset.y - weapon.height* scale,
+            weapon.width  * scale,
+            weapon.height * scale
+        };
     }
     else {
-        texture = idle;
+        origin = { weapon.width * scale, weapon.height * scale };
+        offset = { 25.f, 55.f };
+        rotation = IsMouseButtonDown(MOUSE_LEFT_BUTTON) ? -35.f : 0.f;
+
+        weaponCollitionRec = { getScreenPos().x + offset.x - weapon.width * scale ,
+           getScreenPos().y + offset.y - weapon.height * scale,
+           weapon.width * scale,
+           weapon.height * scale
+        };
     }
+
+    //draw the sword
+    Rectangle source{ 0.f, 0.f, static_cast<float>(weapon.width) * rightleft, static_cast<float>(weapon.height) };
+    Rectangle dest{ getScreenPos().x + offset.x, getScreenPos().y + offset.y, weapon.width * scale, weapon.height * scale };
+    DrawTexturePro(weapon, source, dest, origin,rotation,WHITE);
 }
+
+
+
 Character::Character(int winWidth, int winHeight)
+    :windowWidth(winWidth),windowHeight(winHeight)
 {
-   
         width = texture.width / maxFrame;
         height = texture.height;
+}
 
-        screenPos = {
-            static_cast<float> (winWidth) / 2.0f - scale * (0.5f * width),
-            static_cast<float> (winHeight) / 2.0f - scale * (0.5f * height)
-        };
-    
+Vector2 Character::getScreenPos()
+{
+    return Vector2{
+            static_cast<float> (windowWidth) / 2.0f - scale * (0.5f * width),
+            static_cast<float> (windowHeight) / 2.0f - scale * (0.5f * height)
+    };
+}
 
+void Character::takeDamage(float damage)
+{
+    health -= damage;
+    if (health <= 0.f) {
+        setAlive(false);
+    }
 }
    
 

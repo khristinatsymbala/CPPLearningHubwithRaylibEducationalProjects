@@ -1,10 +1,12 @@
 ﻿  Character.cpp
-  Enemy.cpp
+  Classy Clash.cpp
+E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Character.cpp(58,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Character.cpp(59,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Classy Clash.cpp(77,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Classy Clash.cpp(77,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Classy Clash.cpp(84,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Classy Clash.cpp(84,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
-E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Character.cpp(40,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Character.cpp(41,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Enemy.cpp(11,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\Enemy.cpp(12,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Classy Clash.vcxproj -> E:\CPP\repos\CPPLearningHubwithRaylibEducationalProjects\CPP Fundamentals Game Programming For Beginners\Classy Clash\x64\Debug\Classy Clash.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
