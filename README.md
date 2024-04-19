@@ -15,6 +15,5 @@ Serving as a hub for educational projects derived from diverse courses and tutor
    - Link: [Tutorial Link](https://www.youtube.com/watch?v=LGqsnM_WEK4&list=PLwR6ZGPvjVOSRywn9VCQ3yrRVruxzzuo9&index=4)
 2. **Pong Game:**
    - Description: In this tutorial I am going to show you how to make Pong, a simple but very addictive game where the player controls the right paddle and the computer the left one. We are going to build this game using C++ and the raylib library. At first we are going to build a simple black and white version, just like the original pong of 1973, but at the end of the video we are going to add colors to it, to make it look better. 
-
-Although Pong is a very simple game, it covers a lot of the aspects of computer game programming, like movement, control, collision detection, scoring, artificial intelligence and so on. If you learn how to program Pong you will be able to program a lot of other games as well.
+   - Although Pong is a very simple game, it covers a lot of the aspects of computer game programming, like movement, control, collision detection, scoring, artificial intelligence and so on. If you learn how to program Pong you will be able to program a lot of other games as well.
    - Link: [Tutorial Link](https://www.youtube.com/watch?v=VLJlTaFvHo4&list=PLwR6ZGPvjVOSRywn9VCQ3yrRVruxzzuo9&index=2)
