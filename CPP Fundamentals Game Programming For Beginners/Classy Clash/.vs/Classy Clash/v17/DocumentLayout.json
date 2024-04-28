@@ -75,12 +75,21 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< Updated upstream
               "Title": "Character.cpp",
               "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Character.cpp",
               "RelativeDocumentMoniker": "Character.cpp",
               "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Character.cpp",
               "RelativeToolTip": "Character.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAAAAAAA",
+=======
+              "Title": "Classy Clash.cpp",
+              "DocumentMoniker": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp",
+              "RelativeDocumentMoniker": "Classy Clash.cpp",
+              "ToolTip": "E:\\CPP\\repos\\CPPLearningHubwithRaylibEducationalProjects\\CPP Fundamentals Game Programming For Beginners\\Classy Clash\\Classy Clash.cpp",
+              "RelativeToolTip": "Classy Clash.cpp",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAGQAAAAAAAAA",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-03T19:49:03.107Z",
               "EditorCaption": ""
